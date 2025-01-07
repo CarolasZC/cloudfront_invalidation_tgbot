@@ -51,7 +51,7 @@ try:
 									'/*'
 								]
 							},
-							'CallerReference': str(time.time()).replace(".", "")
+							'CallerReference': str(int(time.time()))[:10]
 						}
 				)
 					bot.send_message(domain.chat.id,text=f"{domain.text} status: {res['Invalidation']['Status']} at time {res['Invalidation']['CreateTime']}", parse_mode="Markdown")	
