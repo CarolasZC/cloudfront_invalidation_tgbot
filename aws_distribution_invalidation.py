@@ -9,7 +9,7 @@ access_key =""
 secret_access_key =""
 default_region=""
 TELEGRAM_BOT_TOKEN =""
-
+crtime = str(int(time.time()))[:10]
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
 try:
@@ -51,7 +51,7 @@ try:
 									'/*'
 								]
 							},
-							'CallerReference': str(int(time.time()))[:10]
+							'CallerReference': crtime
 						}
 				)
 					bot.send_message(domain.chat.id,text=f"{domain.text} status: {res['Invalidation']['Status']} at time {res['Invalidation']['CreateTime']}", parse_mode="Markdown")	
